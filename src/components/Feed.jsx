@@ -5,7 +5,7 @@ Feed.PropTypes = {
     comentario : PropTypes.string,
     removeFeed : PropTypes.func,
 }
-export default function Feed ({email,comentario,removeFeed}){
+export default function Feed({email,comentario,removeFeed}){
     return(
         <div>
             <h4>{email}</h4>

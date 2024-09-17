@@ -1,7 +1,7 @@
 
-import NewFeedForm from "./components/newFeedForm"
+import useFeedCollection from "./hooks/useFeedCollection"
+import NewFeedForm from "./components/NewFeedForm"
 import Feed from "./components/Feed"
-import useFeedCollection from "./assets/hooks/useFeedCollection"
 
 export default function App(){
 const {feed,addFeed,removeFeed} = useFeedCollection()
@@ -14,16 +14,17 @@ const {feed,addFeed,removeFeed} = useFeedCollection()
       />
       <hr />
       <div className="feeds">
-        { feed.map((feeds) =>(
-          <div key={feeds.id}>
+        { feed.length > 0
+          ? feed.map((feeds) =>(
             <Feed 
               key={feeds.id}
               email={feeds.email}
               comentario={feeds.comentario}
               removeFeed={()=>removeFeed(feeds.id)}
-            />
-          </div>
-        ))}
+            />))
+          :(
+            <h1>insira um comentario</h1>
+        )}
       </div>
     </div>
   )

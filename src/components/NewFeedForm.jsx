@@ -25,12 +25,15 @@ export default function NewFeedForm({addFeed}){
                 id="email" 
                 label="Email:" 
                 value={email} 
-                setValue={setEmail} />
+                setValue={setEmail} 
+                required
+            />
             <TextAreaInput 
                 id="comentario" 
                 label="comentario" 
                 value={comentario} 
                 setValue={setComentario}
+                required
             />
         <button type="submit">Enviar comentário</button>
       </form>

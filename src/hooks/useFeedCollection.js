@@ -8,12 +8,15 @@ export default function useFeedCollection(){
     })
     const addFeed =({email,comentario})=>{
         const id = Math.floor(Math.random()*1000)
+
         const feed = {id,email,comentario}
+        
         setFeed(State =>{
             const newState = [...State,feed] 
             localStorage.setItem("abc-feed-lib",JSON.stringify(newState))
             return newState
         })
+        console.log(hors)
     }
     const removeFeed = (id) => {
         setFeed(State =>{
